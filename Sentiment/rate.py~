@@ -4,9 +4,10 @@ import nltk
 from collections import OrderedDict
 import operator
 
+datastore = OrderedDict()
 with open("comments.json", 'r') as f:
     datastore = json.load(f)
-
+"""
 ratings = OrderedDict()
 for i in datastore.keys():
     sum = 0
@@ -17,5 +18,23 @@ for i in datastore.keys():
 sorted_ratings = OrderedDict()
 
 sorted_ratings = sorted(ratings.items(), key=operator.itemgetter(1), reverse=True)
-print (sorted_ratings)
 
+with open("sortedRating.json", 'w') as f:
+    json.dump(sorted_ratings, f)
+"""
+
+for i in datastore.keys():
+    sum = 0
+    for j in datastore[i]:
+        sum += rfft.rating(j)
+    if (len(datastore[i]) != 0):
+        datastore[i].insert(0,sum/len(datastore[i]))
+    else:
+        datastore[i].insert(0,-1)
+for i in datastore:
+    for j in datastore[i]:
+        print (datastore[i][len(datastore[i])-1])
+datastore = sorted(datastore.items(), key=operator.itemgetter(1), reverse=True)
+
+with open("sortedRating.json", 'w') as f:
+    json.dump(datastore, f)
