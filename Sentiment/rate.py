@@ -4,7 +4,7 @@ import nltk
 from collections import OrderedDict
 import operator
 
-datastore = OrderedDict()
+datastore = dict()
 with open("comments.json", 'r') as f:
     datastore = json.load(f)
 
@@ -20,4 +20,4 @@ for i in datastore.keys():
 datastore = sorted(datastore.items(), key=operator.itemgetter(1), reverse=True)
 
 with open("sortedRating.json", 'w') as f:
-    json.dump(datastore, f, indent=4, sort_keys=True)
+    json.dump(datastore, f, indent=4) 
