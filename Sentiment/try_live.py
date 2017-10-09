@@ -25,20 +25,20 @@ def web(g):
     soup=BeautifulSoup(html,'html.parser')
     books=soup.find_all('h2',class_="a-size-medium s-inline  s-access-title  a-text-normal")
     # for i in books:
-    # 	print(i.text)
+    #     print(i.text)
     book_link=soup.find_all('a',class_='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal')
     # for i in book_link:
-    # 	print(i.get('href'))
+    #     print(i.get('href'))
     ac_dict={}
     for i in range(len(book_link)):
         j=book_link[i].get('href')
         clist=wc.web(j)
         ac_dict[books[i].text]=(clist)
-    with open("/home/shashwat/Programs/Python/book_recommender_system/Sentiment/comments.json", 'w') as f:	
+    with open("/home/shashwat/Programs/Python/book_recommender_system/Sentiment/comments.json", 'w') as f:    
         json.dump(ac_dict,f)
     rate_live.nProcess()
 
 
 if __name__=="__main__":
     g = int(sys.argv[1])
-    web(g)	
+    web(g)    
