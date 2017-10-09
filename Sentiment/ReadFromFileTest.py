@@ -28,10 +28,10 @@ def rating (review):
    #review = removePunctuation(review)
    #print("After punctuation removed", review)
    #print(review)
-   f = open('TestDictionary6.txt', "r")	# The dictionary text file
+   f = open('TestDictionary6.txt', "r") # The dictionary text file
    
    entries = [entry for entry in f.read().split('\n')]
-   entries.pop() 			# Gets rid of '' entry
+   entries.pop()            # Gets rid of '' entry
    #print(entries)
    #dictionary = {entry[0:len(entry)-3]: int(entry[len(entry)-2:]) for entry in entries}
    dictionary = {entry[0:len(entry)-4]: int(entry[len(entry)-3:]) for entry in entries} # Form {"word": int}
@@ -108,6 +108,6 @@ def rating (review):
    return overall_rating
 
 if __name__=="__main__":
-   review = sys.argv[1]		# Take input string review
+   review = sys.argv[1]     # Take input string review
    rating_value = rating(review)
    print (rating_value)

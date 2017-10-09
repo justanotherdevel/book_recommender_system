@@ -3,7 +3,7 @@ import lxml
 from bs4 import BeautifulSoup
 import re
 import time 
-import allgenre as ag
+import allgenre_live as ag
 import webc as wc
 import json
 import rate_live
@@ -41,4 +41,4 @@ def web(g):
 
 if __name__=="__main__":
     g = int(sys.argv[1])
-    web(g)    
+    web(g)
