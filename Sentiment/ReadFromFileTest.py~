@@ -97,11 +97,11 @@ def rating (review):
    #print("******************")
    #print(overall_rating)
    #print("{0:3.1f}".format(overall_rating))
-   if(overall_rating > 80): #print("That's extremely positive :D")
-   elif(overall_rating > 55): #print("That's positive. :)")
-   elif(overall_rating < 20): #print("That's extremely negative :'(")
-   elif(overall_rating < 45): #print("That's negative. :(")
-   else: #print("Neutral :I")
+   #if(overall_rating > 80): print("That's extremely positive :D")
+   #elif(overall_rating > 55): print("That's positive. :)")
+   #elif(overall_rating < 20): print("That's extremely negative :'(")
+   #elif(overall_rating < 45): print("That's negative. :(")
+   #else: #print("Neutral :I")
    #
    #print("******************")
    return overall_rating

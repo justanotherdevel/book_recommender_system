@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ## Jocelyn Huang
 ## Sentiment Analysis Project
 ## 02.06.2014
